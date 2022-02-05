@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thank you!</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      .bxs-check-square {
+        font-size: 8rem;
+        color: rgb(119, 235, 119);
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        height: 100vh;
+        background-color: #95e1d3;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: center;
+        background-color: #215d8f;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        color: white;
+        line-height: 2.1rem;
+        margin: 35vh auto;
+      }
+      #user__name {
+        font-style: italic;
+        color: rgb(240, 216, 171);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="child"><h1>THANK YOU!</h1></div>
+      <div class="child"><i class="bx bxs-check-square"></i></div>
+      <div class="child">
+        <h3>
+          Dear <span id="user__name"><%=user%>,</span> <br />
+          Thank you for reaching out, I will get back to you as soon as
+          possible.
+        </h3>
+        <p>You will be redirected shortly...</p>
+      </div>
+    </div>
+
+    <script defer>
+      setTimeout(() => {
+        window.location.replace("/");
+      }, 5500);
+    </script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+      const sr = ScrollReveal({
+        origin: "bottom",
+        distance: "80px",
+        duration: 2000,
+        reset: true,
+      });
+
+      sr.reveal(".container", { origin: "bottom", delay: 300 });
+    </script>
+  </body>
+</html>
